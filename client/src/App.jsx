@@ -55,46 +55,54 @@ const App = () => {
   };
 
   return (
-    <Container maxWidth="sm">
-      <Box sx={{ height: 200 }} />
-      <Typography variant="h6" component="div" gutterBottom>
-        {socketId}
+    <Container maxWidth="sm" className="main">
+      <Box sx={{ height: 50 }} />
+      <Typography
+        variant="h8"
+        component="div"
+        className="socket__id"
+        gutterBottom
+      >
+        ID - {socketId}
       </Typography>
 
-      <form onSubmit={joinRoomHandler}>
-        <h5>Join Room</h5>
-        <TextField
-          value={roomName}
-          onChange={(e) => setRoomName(e.target.value)}
-          id="standard-basic"
-          label="Room Name"
-          variant="standard"
-        />
-        <Button type="submit" variant="outlined">
-          Join
-        </Button>
-      </form>
+      <div className="border rounded p-3 ">
+        <h5 className="text-center text-2xl mb-4 font-bold">Join Room</h5>
+        <form onSubmit={joinRoomHandler}>
+          <TextField
+            value={roomName}
+            onChange={(e) => setRoomName(e.target.value)}
+            id="standard-basic"
+            label="Room Name"
+            variant="standard"
+          />
+          <Button type="submit" variant="outlined">
+            Join
+          </Button>
+        </form>
 
-      <form onSubmit={handleSubmit}>
-        <TextField
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-          id="standard-basic"
-          label="Enter your message"
-          variant="standard"
-        />
-        <TextField
-          value={room}
-          onChange={(e) => setRoom(e.target.value)}
-          id="standard-basic"
-          label="Room "
-          variant="standard"
-        />
-        <Button type="submit" variant="outlined">
-          Send
-        </Button>
-      </form>
-
+        <form onSubmit={handleSubmit}>
+          <div className="flex gap-2">
+            <TextField
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              id="standard-basic"
+              label="Enter your message"
+              variant="standard"
+            />
+            <TextField
+              value={room}
+              onChange={(e) => setRoom(e.target.value)}
+              id="standard-basic"
+              label="Room "
+              variant="standard"
+            />
+            <Button type="submit" variant="outlined">
+              Send
+            </Button>
+          </div>
+        </form>
+      </div>
       <Stack>
         {messages.map((m, i) => (
           <Typography key={i} variant="h6" component="div" gutterBottom>

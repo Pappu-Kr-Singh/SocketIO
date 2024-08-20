@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.main {
+  border: 1px solid rgb(196, 189, 189);
+  padding: 2rem;
+  margin-top: 2rem;
+  background-color: azure;
+  border-radius: 10px;
+}
+
+.socket__id {
+  text-align: center;
+  font-weight: bold;
+  color: rgb(92, 92, 9);
+}
