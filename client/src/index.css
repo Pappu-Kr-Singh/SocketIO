@@ -15,3 +15,14 @@
   font-weight: bold;
   color: rgb(92, 92, 9);
 }
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.direct_msg {
+  border: 1px solid rgb(196, 189, 189);
+  background-color: azure;
+}
